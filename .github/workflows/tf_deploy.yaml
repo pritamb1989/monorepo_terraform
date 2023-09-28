@@ -26,17 +26,17 @@ jobs:
 
     - name: Plan
       run: terraform plan -var-file=rg.tfvars
-      #env:
-      #  ARM_CLIENT_ID : ${{ vars.AZURE_CLIENT_ID }}
-      #  ARM_CLIENT_SECRET : ${{ secrets.AZURE_CLIENT_SECRET }}
-      #  ARM_TENANT_ID : ${{ vars.AZURE_TENANT_ID }}
-      #  ARM_SUBSCRIPTION_ID : ${{ vars.AZURE_SUBSCRIPTION_ID }}
+      env:
+        ARM_CLIENT_ID : ${{ vars.AZURE_CLIENT_ID }}
+        ARM_CLIENT_SECRET : ${{ secrets.AZURE_CLIENT_SECRET }}
+        ARM_TENANT_ID : ${{ vars.AZURE_TENANT_ID }}
+        ARM_SUBSCRIPTION_ID : ${{ vars.AZURE_SUBSCRIPTION_ID }}
 
     - name: applying
       run: terraform apply -var-file=rg.tfvars
-      #env:
-      #  ARM_CLIENT_ID : ${{ vars.AZURE_CLIENT_ID }}
-      #  ARM_CLIENT_SECRET : ${{ secrets.AZURE_CLIENT_SECRET }}
-      #  ARM_TENANT_ID : ${{ vars.AZURE_TENANT_ID }}
-      #  ARM_SUBSCRIPTION_ID : ${{ vars.AZURE_SUBSCRIPTION_ID }}
+      env:
+        ARM_CLIENT_ID : ${{ vars.AZURE_CLIENT_ID }}
+        ARM_CLIENT_SECRET : ${{ secrets.AZURE_CLIENT_SECRET }}
+        ARM_TENANT_ID : ${{ vars.AZURE_TENANT_ID }}
+        ARM_SUBSCRIPTION_ID : ${{ vars.AZURE_SUBSCRIPTION_ID }}
 
