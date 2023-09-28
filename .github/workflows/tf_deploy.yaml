@@ -16,7 +16,7 @@ jobs:
 
     - name: Set Env Values
       run: |
-        export TF_VAR_azure_client_id=${{ env.AZURE_CLIENT_ID }}
+        export TF_VAR_azure_client_id=${{ vars.AZURE_CLIENT_ID }}
         export TF_VAR_azure_client_secret=${{ secrets.AZURE_CLIENT_SECRET }}
         export TF_VAR_azure_subscription_id=${{ env.AZURE_SUBSCRIPTION_ID }}
         export TF_VAR_azure_tenant_id=${{ env.AZURE_TENANT_ID }}
