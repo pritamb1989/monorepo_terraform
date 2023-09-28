@@ -20,13 +20,14 @@ jobs:
         export TF_VAR_azure_client_secret=${{ secrets.AZURE_CLIENT_SECRET }}
         export TF_VAR_azure_subscription_id=${{ secrets.AZURE_SUBSCRIPTION_ID }}
         export TF_VAR_azure_tenant_id=${{ secrets.AZURE_TENANT_ID }}
+        echo $TF_VAR_azure_client_id
 
-    - name: Init
-      run: terraform init
+    #- name: Init
+    #  run: terraform init
 
-    - name: Plan
-      run: terraform plan -var-file=rg.tfvars
+    #- name: Plan
+    #  run: terraform plan -var-file=rg.tfvars
 
-    - name: applying
-      run: terraform apply -var-file=rg.tfvars
+    #- name: applying
+    #  run: terraform apply -var-file=rg.tfvars
 
