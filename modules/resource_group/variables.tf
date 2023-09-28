@@ -14,7 +14,3 @@ variable "location" {
   type        = string
 }
 
-variable "TF_VAR_subscription_id" {}
-variable "TF_VAR_tenant_id" {}
-variable "TF_VAR_client_id" {}
-variable "TF_VAR_client_secret" {}
