@@ -1,1 +1,0 @@
-# monorepo_terraform_to_depoy

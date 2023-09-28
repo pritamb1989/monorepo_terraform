@@ -1,2 +1,0 @@
-name        = "coreResourceGroup"
-location    = "westeurope"
