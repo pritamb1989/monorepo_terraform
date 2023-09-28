@@ -14,15 +14,15 @@ jobs:
     - name: set terraform
       uses: hashicorp/setup-terraform@v2
 
+    - name: Init
+      run: terraform init
+
     - name: Set Env Values
       run: |
         export ARM_CLIENT_ID=${{ vars.AZURE_CLIENT_ID }}
         export ARM_CLIENT_SECRET=${{ secrets.AZURE_CLIENT_SECRET }}
         export ARM_TENANT_ID=${{ vars.AZURE_SUBSCRIPTION_ID }}
         export ARM_SUBSCRIPTION_ID=${{ vars.AZURE_TENANT_ID }}
-
-    - name: Init
-      run: terraform init
 
     - name: Plan
       run: terraform plan -var-file=rg.tfvars
