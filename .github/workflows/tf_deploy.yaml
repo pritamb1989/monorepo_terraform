@@ -1,9 +1,7 @@
 name: Resource Deployment
 
 on:
-  push:
-    branches:
-      - none
+  workflow_dispatch:
 
 jobs:
   deploy:
