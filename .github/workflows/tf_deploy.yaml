@@ -1,0 +1,34 @@
+name: Resource Deployment
+
+on:
+  push:
+    branches:
+      - none
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checking out the repo
+      uses: actions/checkout@v4
+    
+    - name: set terraform
+      uses: hashicorp/setup-terraform@v2
+
+    - name: Set Env Values
+      run: |
+        export TF_VAR_azure_client_id=${{ secrets.AZURE_CLIENT_ID }}
+        export TF_VAR_azure_client_secret=${{ secrets.AZURE_CLIENT_SECRET }}
+        export TF_VAR_azure_subscription_id=${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        export TF_VAR_azure_tenant_id=${{ secrets.AZURE_TENANT_ID }}
+
+    - name: Init
+      run: terraform init
+
+    - name: Plan
+      run: terraform plan
+
+    - name: applying
+      run: terraform apply 
+
